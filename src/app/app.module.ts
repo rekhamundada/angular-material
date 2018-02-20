@@ -5,6 +5,8 @@ import { FlexLayoutModule} from '@angular/flex-layout'; import { FormsModule } f
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DemoModule } from './demo/demo.module';
+import { UserService } from './contactmanager/services/user.service';
+import {  HttpClientModule,} from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -23,9 +25,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     DemoModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+  bootstrap: [AppComponent],
+  entryComponents: []
 })
 export class AppModule { }
